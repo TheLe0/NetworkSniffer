@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Net;
 
-namespace NetworkSnifferLib.Model
+namespace NetWorkSniffer.Core
 {
     public class IPHeader
     {
