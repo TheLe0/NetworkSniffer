@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 
-using NetworkSnifferLib.Model;
-
-namespace NetworkSnifferLib.Logic
+namespace NetworkSniffer.Core
 {
     public class SnifferWorker
     {
