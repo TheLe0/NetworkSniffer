@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
 
-namespace NetworkSnifferLib.Logic
+namespace NetworkSniffer.Core
 {
     public class IpHandler
     {
