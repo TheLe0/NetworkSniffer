@@ -1,5 +1,4 @@
 namespace NetworkSniffer.Core
-
 {
     public enum Protocol
     {
