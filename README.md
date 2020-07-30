@@ -27,22 +27,32 @@ You will need to execute the application as a administrator, if you are going to
 ## Usage ##
 
 ```C#
-//get machine local ip's
-IPAddress[] hosts = Dns.Resolve(Dns.GetHostName()).AddressList;
-//create sniffer for each ip
-workers = new SnifferWorker[hosts.Length];
+ class Program
+    {
+        public const int LIMIT_TIMEOUT = 25;
 
-for (int i = 0; i < workers.Length; i++)
-{
- //flag if export also the packet data
- workers[i] = new SnifferWorker(true);
- //sign to report event
- workers[i].NewPacket += Worker_NewPacket;
- workers[i].start(hosts[i]);
-}
+        static void Main(string[] args)
+        {
+            IpHandler IP;
+            SnifferWorker Sniff;
+            
+            try
+            {
+                IP = new IpHandler();
+                Sniff = new SnifferWorker(true);
+                IP.GetAllFoundIP();
+                Sniff.Start(this.IP.IpSelected);
+            }
+            catch (Exception exc)
+            {
+                throw new Exception("Main exception: "+exc);
+            }
+            finally
+            {
+                Console.WriteLine("---------- END --------------");
 
-//dont kill the application
-while (true) {
- Thread.Sleep(1000);
-}
+            }
+            Console.ReadKey();
+        }
+    }
 ```
