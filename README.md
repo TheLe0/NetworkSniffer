@@ -27,32 +27,18 @@ You will need to execute the application as a administrator, if you are going to
 ## Usage ##
 
 ```C#
- class Program
-    {
-        public const int LIMIT_TIMEOUT = 25;
+IpHandler IP;
+SnifferWorker Sniff;
 
-        static void Main(string[] args)
-        {
-            IpHandler IP;
-            SnifferWorker Sniff;
-            
-            try
-            {
-                IP = new IpHandler();
-                Sniff = new SnifferWorker(true);
-                IP.GetAllFoundIP();
-                Sniff.Start(this.IP.IpSelected);
-            }
-            catch (Exception exc)
-            {
-                throw new Exception("Main exception: "+exc);
-            }
-            finally
-            {
-                Console.WriteLine("---------- END --------------");
-
-            }
-            Console.ReadKey();
-        }
-    }
+try
+{
+    IP = new IpHandler();
+    Sniff = new SnifferWorker(true);
+    IP.GetAllFoundIP();
+    Sniff.Start(this.IP.IpSelected);
+}
+catch (Exception exc)
+{
+    throw new Exception(exc);
+}
 ```
