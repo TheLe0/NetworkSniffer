@@ -18,7 +18,6 @@ A sniffer for TCP and UDP packages
 * [x] IP Version;
 * [x] An overall of packages sniffed;
 * [x] Total TCP packages sniffed;
-* [x] Lost packages;
 * [x] Information about each package header.
 
 ## Configuration ##
